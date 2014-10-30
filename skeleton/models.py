@@ -77,7 +77,7 @@ if __name__ == '__main__':
 
 	#PWD = os.path.abspath(os.curdir)
 
-	engine = create_engine('postgres://qiyyulwagfkvzt:j_k8ydtSIEny7mwA87mCj68d9o@ec2-54-83-204-104.compute-1.amazonaws.com:5432/d9dppr2muk5dct', echo=True)
+	engine = create_engine('replacethis', echo=True)
 
 	Base.metadata.create_all(engine)
 	Session = sessionmaker(bind=engine)
