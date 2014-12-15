@@ -1,0 +1,21 @@
+{% extends "base.html"%}
+{% block title %}
+Homepage
+{% endblock %}
+
+{% block content %}
+<ul class="list-group">
+{% for question in questions %}
+	<li class="list-group-item">
+		{{ question.prompt }}
+	</li>
+{% endfor %}
+</ul>
+
+<script type="text/javascript">
+
+</script>
+
+
+
+{% endblock %}

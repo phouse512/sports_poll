@@ -6,8 +6,8 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.login import LoginManager
 from flask.ext.login import login_required, login_user, current_user, logout_user
 from flask import render_template, request, jsonify, make_response, Response, flash, redirect, session, url_for, g
-from skeleton.models import Base, User, Alias, Reminder
-from skeleton import config
+from sports.models import Base, User, Prediction, Category, Option, Question, HasCategory
+from sports import config
 
 from sqlalchemy import desc, and_
 from sqlalchemy.orm import load_only
@@ -41,10 +41,21 @@ def login():
 def welcome():	
 	return "Hello"
 
+@app.route('/home')
+def home():
+	questions = db.session.query(Question).filter_by(complete=False)
+	return render_template('home.html', questions=questions)
 
-# Example of ajax route that returns JSON
-@app.route('/_add_numbers')
-def add_numbers():
-    a = request.args.get('a', 0, type=int)
-    b = request.args.get('b', 0, type=int)
-    return jsonify(result=a + b)
+@app.route('/trigger')
+def trigger():
+	print db.engine
+
+	connection = db.engine.connect()
+	string = "\\d sports_user"
+	print string
+	result = connection.execute("select * from information_schema.columns where table='sports_user'")
+	for row in result:
+		print "column:%r" % row['column']
+	connection.close()
+	return "hi"
+

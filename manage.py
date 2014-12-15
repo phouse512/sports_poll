@@ -1,6 +1,6 @@
 from flask.ext.script import Manager
 
-from skeleton.app import app, db
+from sports.app import app, db
 
 
 manager = Manager(app)
