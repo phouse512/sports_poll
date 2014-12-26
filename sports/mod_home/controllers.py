@@ -16,3 +16,5 @@ def dashboard():
 	# the view that a logged in user sees
 	# sees popular questions,
 	# new questions, personal data
+
+def another_Function():
