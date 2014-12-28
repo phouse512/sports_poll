@@ -39,6 +39,14 @@ Users:
 	password (SHA-1 encrypted)
 	join date
 	power ranking
+
+Questions:
+	array of possible answers
+	correct answer
+	date posted
+	weight
+	question status (active, hidden, done, etc.)
+	array of categories
 	
 
 

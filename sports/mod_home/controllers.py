@@ -17,4 +17,3 @@ def dashboard():
 	# sees popular questions,
 	# new questions, personal data
 
-def another_Function():
