@@ -33,20 +33,31 @@ We need to be able to:
 	query users with the highest win percentage
 	query all responses for a given question
 	query a question's win percentage
+	query total number of votes
 
 Users:
+	location
+	email
+	first name
+	last name
 	username
 	password (SHA-1 encrypted)
 	join date
 	power ranking
+	role
+	last logged in
 
 Questions:
 	array of possible answers
 	correct answer
 	date posted
+	date answered
 	weight
 	question status (active, hidden, done, etc.)
 	array of categories
+
+User Answers:
+
 	
 
-
+PyMongo Wins
